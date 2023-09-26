@@ -1,10 +1,28 @@
 import React from 'react';
-import { Container } from './styles';
+import {Container, TitleContainer, Controllers } from './styles';
+import SelectInput from '../SelectIpunt';
 
-const ContentHeader: React.FC = () => {
+
+interface IContentHeader{
+    title: string;
+    lineColor: string;
+    children: React.ReactNode;
+}
+
+const ContentHeader: React.FC<IContentHeader> = ({
+    title, lineColor, children
+}) => {
+
+
+
     return(
         <Container>
-            <h1>Content Header</h1>
+            <TitleContainer lineColors={lineColor}>
+                <h1>{title}</h1>
+            </TitleContainer>
+            <Controllers>
+                {children}
+            </Controllers>
         </Container>
         
     );

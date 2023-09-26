@@ -1,17 +1,21 @@
 import React from 'react';
 import { Container, TitleContainer, Controllers } from './styles';
 import ContentHeader from '../../components/ContentHeader';
+import SelectInput from '../../components/SelectIpunt';
 
 const Dashboard: React.FC = () => {
+
+    const options =[
+        {value: 'Daniel', label: 'Daniel'},
+        {value: 'Marcos', label: 'Marcos'},
+        {value: 'Eliana', label: 'Eliana'}
+    ]
+
     return(
         <Container>
-            <TitleContainer>
-                <h1>Title</h1>
-            </TitleContainer>            
-            <Controllers>
-                <button type='button'>Botão A</button>
-                <button type='button'>Botão B</button>
-            </Controllers>
+            <ContentHeader title='Dashboard' lineColor='#FFF'>
+                <SelectInput options={options}/>
+            </ContentHeader>
         </Container>      
     );
 }
